@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        build:
+            context: .
+
+    nginx:
+        build:
+            context: /home/tal/Desktop/nginx
+        ports:
+            - "80:80"
+        depends_on:
+                - app

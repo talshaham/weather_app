@@ -1,0 +1,16 @@
+# unit = metada of the service and descriptives
+[Unit]
+Description=Gunicorn instance to serve Flask
+After=network.target   # start after connection to net
+
+# whats the service include: the user that own the service, working directory, enc, exe path
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/mi_zot/project/weather_web
+#Environment="PATH=/home/mi_zot/project/weather_web/venv/bin"
+ExecStart=/home/mi_zot/project/weather_web/venv/bin/gunicorn --bind 0.0.0.0:9090 wsgi:app
+
+# install 
+[Install]
+WantedBy=multi-user.target     # start with boot
