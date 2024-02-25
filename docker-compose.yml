@@ -5,7 +5,6 @@ services:
     image: talshaham/jenkins:latest
 
   nginx:
-    image: nginx:alpine
     build: ./nginx
     ports:
       - "80:80"
