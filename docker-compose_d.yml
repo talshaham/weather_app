@@ -4,7 +4,7 @@ services:
   app:
     restart: always
     image: talshaham/jenkins:latest
-    command: gunicorn -w 4 -b 0.0.0.0:5000 wsgi:app
+#    command: gunicorn -w 4 -b 0.0.0.0:5000 wsgi:app
   nginx:
     container_name: nginx
     restart: always
